@@ -1,2 +1,4 @@
 1. Types of edges (in case of DFS)
 2. Arrival and Departure times of Nodes (in case of DFS)
+Optional:
+Colouring of nodes
