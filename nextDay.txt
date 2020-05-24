@@ -1,0 +1,2 @@
+1. Types of edges (in case of DFS)
+2. Visit times of edges (in case of DFS)
