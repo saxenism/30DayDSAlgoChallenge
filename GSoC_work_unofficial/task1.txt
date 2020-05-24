@@ -1,0 +1,13 @@
+What do you think Rahul if you starting working on reviewing them? I.e., cleaning the repository PRs.
+For instance, for each optimizer we have about 3 PRs related to 'adding a new example idea', also PRs related to 'adding Idea subsection'.
+What do you think about getting one optimizer, check the ~6 PRs and merge them to create a new version of the optimizer vignette?
+
+Just chose one optimizer, and work on combining all its Code-in (vignette-related) PRs.
+To do this, please create a new branch, and try to merge all of these students' PRs to it (so we can give some credit to them). Then do some writing modifications, and submit your branch to PR to rco's develop branch.
+It is not a straight forward task, so take your time
+
+
+Steps to be taken:
+1. Find all "Adding a new example idea" and "Idea Subsection" of a particular optimizer.
+2. That optimizer will be: 
+3.
