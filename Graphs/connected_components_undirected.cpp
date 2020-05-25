@@ -16,6 +16,7 @@ For each input graph print an integer x denoting total number of connected compo
 Constraints:
 
 All the input values are well with in the integer range.
+
 */
 #include <bits/stdc++.h>
 
