@@ -84,7 +84,7 @@ int main()
 			dfs(i);
 		}
 	}
-	if(connected_comp == 1 && e == n-1)
+	if(connected_comp == 1 and e == n-1)
 		cout << "YES" << endl;
 	else
 		cout << "NO" << endl;
