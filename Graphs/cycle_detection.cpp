@@ -15,7 +15,7 @@ Input:
 4 5
 
 Expected Output:
-No cycles
+Contains Cycle
 
 Tip;
 Works for both directed and undirected graphs.
