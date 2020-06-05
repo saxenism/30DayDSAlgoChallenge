@@ -25,7 +25,7 @@ using namespace std;
 
 vector<vector<lli>> graph;
 vector<bool> visited;
-vector<lli> in, low;
+vector<lli> in, low, parent;
 vector<pii> edgeList;
 
 int timer;
@@ -37,14 +37,15 @@ void addEdge(lli a, lli b)
     graph[b].pb(a);
 }
 
-void dfs(lli node, lli parent)
+void dfs(lli node)
 {
     visited[node] = true;
     in[node] = low[node] = timer++;
     for(lli i: graph[node])
     {
+        parent[i] = node;
         if(visited[i]){
-            if(parent == i)
+            if(parent[node] == i)
                 continue;
             else{
                 low[node] = min(low[node], in[i]);
@@ -53,7 +54,7 @@ void dfs(lli node, lli parent)
             }
         }
         else {
-            dfs(i, node);
+            dfs(i);
             low[node] = min(low[node], low[i]);
             if(low[i] > in[node]) {
                 hasBridge = true;
@@ -73,7 +74,7 @@ int main()
     visited.assign(n, false);
     in.assign(n, 0);
     low.assign(n, 0);
-    //parent.assign(n, 0);
+    parent.assign(n, 0);
     //edgeList.assign(e, {0,0});
     edgeList.reserve(e);
     while(e--)
@@ -81,7 +82,7 @@ int main()
         cin >> a >> b;
         addEdge(--a, --b);
     }
-    dfs(0, -1);
+    dfs(0);
     if(hasBridge)
         cout << 0 << endl;
     else{
