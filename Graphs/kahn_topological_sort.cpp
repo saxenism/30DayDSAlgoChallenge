@@ -17,64 +17,60 @@
 #define F first
 #define S second
 #define inf INT_MAX
+#define endl "\n"
 #define gcd(x,y) __gcd(x,y)
 #define lcm(a,b) (a*(b/gcd(a,b)))
 #define i_am_iron_man ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 using namespace std;
 
-vector<vector<int>> graph;
+vector<int> graph[100005];
 vector<bool> visited;
-vector<int> parent;
-vector<int> low;
-vector<int> in;
+int in_deg[100005];
+vector<int> res;
 
-int timer;
-
-void addEdge(int a, int b)
+void buildGraph(int a, int b)
 {
 	graph[a].pb(b);
-	graph[b].pb(a);
+	in_deg[b]++;
 }
 
-void detect_bridge(int node)
+void kahn(int n)
 {
-	visited[node] = true;
-	in[node] = low[node] = timer;
-	++timer;
-	for(int i: graph[node])
+	queue<int> q;
+	for(int i = 1; i <= n; i++)
+		if(in_deg[i] == 0)
+			q.push(i);
+
+	while(!q.empty())
 	{
-		if(visited[i]){
-			if(i == parent[node])
-				continue;
-			else
-				low[node] = min(low[node], in[i]);
-		}
-		else{
-			parent[i] = node;
-			detect_bridge(i);
-            low[node] = min(low[node], low[i]);
-			if(low[i] > in[node])
-				cout << "Bridge exists between " << ++node << " and " << ++i << endl;
-		}
+		int f = q.front();
+		res.pb(f);
+
+		q.pop();
+		for(int i: graph[f])
+		{
+			in_deg[i]--;
+			if(in_deg[i] == 0)
+				q.push(i);
+		} 
 	}
 }
 
 int main()
 {
-	int n, e;
+	i_am_iron_man
+	lli n, e;
 	cin >> n >> e;
-	graph.assign(n, vector<int>());
-	visited.assign(n, false);
-	parent.assign(n, -1);
-	low.assign(n, 0);
-	in.assign(n, 0);
 	while(e--)
 	{
 		int a, b;
 		cin >> a >> b;
-		addEdge(--a, --b);
+		buildGraph(a, b);
 	}
-	detect_bridge(0);
+	kahn(n);
+	for(int i: res)
+		cout << i << " ";
+	cout << endl;
 	return 0;
 }
