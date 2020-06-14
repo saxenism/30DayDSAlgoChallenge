@@ -1,3 +1,13 @@
+/*
+Sample Input:
+4 4
+1 1
+Expected Output:
+0 1 2 3 
+1 2 3 4 
+2 3 4 5 
+3 4 5 6 
+*/
 
 /*short and int: -32,767 to 32,767
 **unsigned short int and unsigned int: 0 to 65,535
@@ -17,7 +27,6 @@
 #define MOD 1000000007
 #define F first
 #define S second
-#define endl "\n"
 #define inf INT_MAX
 #define gcd(x,y) __gcd(x,y)
 #define lcm(a,b) (a*(b/gcd(a,b)))
@@ -25,16 +34,15 @@
 
 using namespace std;
 
-char grid[100][100];
 int dist[100][100];
-int N;
+int N, M;
 bool visited[100][100];
 
 bool isValid(int x, int y)
 {
-    if(x < 1 or x > N or y < 1 or y > N)
+    if(x < 1 or x > N or y < 1 or y > M)
         return false;
-    if(visited[x][y] or grid[x][y] == 'T')
+    if(visited[x][y])
         return false;
     return true;
 }
@@ -65,33 +73,19 @@ void bfs(int x, int y)
             }
         }
     }
+    for(int i = 1; i <= N; i++){
+        for(int j = 1; j <= M; j++)
+            cout << dist[i][j] << " ";
+        cout << endl;
+    }
 }
 
 int main()
 {
     i_am_iron_man
-    int a, b, c, d;
-    cin >> N;
-    for(int i = 1; i <= N; i++)
-    {
-        for(int j = 1; j <= N; j++)
-        {
-            cin >> grid[i][j];
-            if(grid[i][j] == 'S')
-            {
-                a = i;
-                b = j;
-            }
-            if(grid[i][j] == 'E')
-            {
-                c = i;
-                d = j;
-            }
-        }
-    }
-   // cout << N << " " << a << " " << b << " " << c << " " << d << endl;
-     bfs(a, b);
-     cout << dist[c][d] << endl;
-    //cout << a << " " << b;
+    int x, y;
+    cin >> N >> M;
+    cin >> x >> y;
+    bfs(x, y);
     return 0;
 }
