@@ -11,3 +11,58 @@ Steps to be taken:
 1. Find all "Adding a new example idea" and "Idea Subsection" of a particular optimizer.
 2. That optimizer will be: 
 3.
+
+
+Pick One Option:
+A) Warmer ocean water
+
+Increased ocean acidification implies:
+A) decreased CO2 in the atmosphere
+
+Pick one option:
+D) Greater efforts need to be made to control climate change
+
+Which is true?:
+A) Temperature is the most important indicator of climate change
+
+Drought not affected?:
+A) By causing a shortage of skillfull labour
+
+Historical Formation:
+B) Disintegration followed by expansion
+
+Pick:
+A) Louis XVI didnot learn from the mistakes....
+
+D) Napolean used the French army for his personal gains
+
+B) By virtue of his association with the Avigon Papsy
+
+C) Financial drain on the French Economy
+
+
+
+
+BuyHatke Questions:
+
+Given a Directed positive weighted graph with source and destination node. Return the minimum
+weight to reach the destination node. But its compulsory to take one or more paths in between
+to reach the destination node. (In the least Complexity).
+
+OS Questions are a must -> 
+What is a dependancy graph and then from that a code to detect loops in the graph.
+Process and Thread
+Thrashing
+Deadlock and necessary conditions
+Prevention of deadlocks
+Priority inversion
+
+These seem a little too much, keep them for last, apart from the *String* question:
+
+What is the number of binary search trees that you can make from a given sorted array that consists of only unique numbers. (Catalan number)
+
+Given a inorder and preorder of a binary tree, write a code to print the tree, if you can identify a unique tree from it.
+
+Write a code to find the next greater number with the same set of digits as that of a given number. eg for 4132 you can make 4213.
+
+Given a character ‘c’ and a string ‘s’, find the number of substrings that have the character c present only once in them.
